@@ -187,10 +187,10 @@ def dibujar_botones(botones):
 
 def main():
     grafo = Grafo()
-    ubicaciones = {'A': (200, 200), 'B': (505, 465), 'C': (160, 460), 'D': (200, 40), 'E': (600, 160), 'F': (265, 465)}
+    ubicaciones = {'A': (200, 200), 'B': (505, 465), 'C': (160, 460), 'D': (200, 40), 'E': (600, 160), 'F': (265, 465), 'N': (700, 465)}
     for nodo in ubicaciones:
         grafo.agregar_nodo(nodo)
-    for arista in [('A', 'F', 1), ('D', 'A', 2), ('F', 'C', 3), ('F', 'B', 4), ('E', 'A', 5)]:
+    for arista in [('A', 'F', 1), ('D', 'A', 2), ('F', 'C', 3), ('F', 'B', 4), ('E', 'A', 5), ('B', 'N', 6), ('E', 'N', 0)]:
         grafo.agregar_arista(*arista)
 
     simulacion = Simulacion(grafo)
@@ -205,6 +205,8 @@ def main():
         {'text': 'Destino B', 'rect': pygame.Rect(10, 160, 100, 40), 'color': (128, 0, 0), 'accion': lambda: 'B'},
         {'text': 'Destino A', 'rect': pygame.Rect(10, 210, 100, 40), 'color': (128, 0, 0), 'accion': lambda: 'A'},
         {'text': 'Destino C', 'rect': pygame.Rect(10, 260, 100, 40), 'color': (128, 0, 0), 'accion': lambda: 'C'},
+        {'text': 'Destino N', 'rect': pygame.Rect(10, 310, 100, 40), 'color': (128, 0, 0), 'accion': lambda: 'N'},
+
     ]
 
     punto_recogida = None
@@ -261,7 +263,7 @@ def main():
         dibujar_entidades(simulacion.taxis, simulacion.pasajeros, ubicaciones)
         dibujar_botones(botones)
         pygame.display.update()
-        clock.tick(30)  # Limitar la velocidad de actualización a 10 FPS
+        clock.tick(25)  # Limitar la velocidad de actualización a 10 FPS
 
 if __name__ == "__main__":
     main()
