@@ -206,7 +206,6 @@ def main():
         {'text': 'Destino A', 'rect': pygame.Rect(10, 210, 100, 40), 'color': (128, 0, 0), 'accion': lambda: 'A'},
         {'text': 'Destino C', 'rect': pygame.Rect(10, 260, 100, 40), 'color': (128, 0, 0), 'accion': lambda: 'C'},
         {'text': 'Destino N', 'rect': pygame.Rect(10, 310, 100, 40), 'color': (128, 0, 0), 'accion': lambda: 'N'},
-
     ]
 
     punto_recogida = None
